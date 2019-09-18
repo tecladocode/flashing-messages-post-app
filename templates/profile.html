@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .alert-error {
+        background-color: red;
+        color: white;
+      }
+
+      .alert-info {
+        background-color: yellow;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Login</h1>
+    {% for message in get_flashed_messages(with_categories=True) %}
+    <div class="alert-{{ category }}">Error: {{ message }}</div>
+    {% endfor %}
+    <form>
+      <!-- Login form would go here -->
+    </form>
+  </body>
+</html>

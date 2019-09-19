@@ -19,4 +19,6 @@ def home():
 
 @app.route("/profile")
 def profile():
+    flash("This is an info message", category="info")
+    flash("This is an error message", category="error")
     return render_template("profile.html")

@@ -2,24 +2,32 @@
 <html>
   <head>
     <style>
+      .alert {
+        padding: 12px;
+        border-radius: 3px;
+        font-size: 1.2rem;
+        margin-bottom: 16px;
+        border-width: 2px;
+        border-style: solid;
+      }
+
       .alert-error {
+        border-color: darkred;
         background-color: red;
         color: white;
       }
 
       .alert-info {
+        border-color: orange;
         background-color: yellow;
         color: black;
       }
     </style>
   </head>
   <body>
-    <h1>Login</h1>
-    {% for message in get_flashed_messages(with_categories=True) %}
+    <h1>Flashing messages</h1>
+    {% for category, message in get_flashed_messages(with_categories=True) %}
     <div class="alert-{{ category }}">Error: {{ message }}</div>
     {% endfor %}
-    <form>
-      <!-- Login form would go here -->
-    </form>
   </body>
 </html>
